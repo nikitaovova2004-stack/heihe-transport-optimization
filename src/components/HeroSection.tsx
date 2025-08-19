@@ -33,23 +33,22 @@ const HeroSection = () => {
           <div className="space-y-8">
             <div className="space-y-4">
               <h1 className="text-5xl lg:text-6xl font-bold text-primary leading-tight">
-                FTL-перевозки<br />
-                из <span className="text-secondary">Хэйхэ</span>
+                FTL-перевозки из <span className="text-secondary">Хэйхэ</span> (КНР) в Россию
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed">
-                Тент, рефрижератор, автовоз, трал — 7-12 дней.<br />
-                Собственный парк 180 машин, склад 5000 м² в Хэйхэ
+                Фуры, рефы, автовозы, тралы — 7–12 дней.<br />
+                <strong className="text-primary">Фиксированная ставка FTL, собственный парк 180 машин, склад 5 000 м² в Хэйхэ</strong>
               </p>
             </div>
             
             <div className="flex flex-wrap gap-4">
               <Button size="lg" className="bg-secondary text-primary hover:bg-secondary/90 font-semibold">
                 <Icon name="Calculator" size={20} className="mr-2" />
-                Рассчитать стоимость
+                Рассчитать и забронировать за 2 минуты
               </Button>
               <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white">
-                <Icon name="MessageCircle" size={20} className="mr-2" />
-                WhatsApp
+                <Icon name="MessageSquare" size={20} className="mr-2" />
+                Получить КП в WhatsApp
               </Button>
             </div>
             
@@ -153,13 +152,25 @@ const HeroSection = () => {
                   </div>
                 )}
                 
-                <Button 
-                  onClick={calculatePrice}
-                  size="lg"
-                  className="w-full bg-secondary text-primary hover:bg-secondary/90 font-semibold h-12"
-                >
-                  Рассчитать стоимость
-                </Button>
+                <div className="space-y-3">
+                  <Button 
+                    onClick={calculatePrice}
+                    size="lg"
+                    className="w-full bg-secondary text-primary hover:bg-secondary/90 font-semibold h-12"
+                  >
+                    Рассчитать стоимость и срок
+                  </Button>
+                  
+                  {calculatedPrice && (
+                    <Button 
+                      size="lg"
+                      className="w-full bg-primary text-white hover:bg-primary/90 font-semibold h-12"
+                    >
+                      <Icon name="Truck" size={20} className="mr-2" />
+                      Забронировать машину за 5 минут
+                    </Button>
+                  )}
+                </div>
               </div>
             </div>
           </div>
