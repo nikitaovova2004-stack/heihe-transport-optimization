@@ -58,7 +58,7 @@ const HeroSection = () => {
                 <div className="text-sm text-gray-600">единиц техники</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary mb-1">12</div>
+                <div className="text-3xl font-bold text-primary mb-1">8</div>
                 <div className="text-sm text-gray-600">лет опыта</div>
               </div>
               <div className="text-center">

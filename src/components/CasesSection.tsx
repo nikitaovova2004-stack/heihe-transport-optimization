@@ -45,7 +45,7 @@ const CasesSection = () => {
   const stats = [
     { number: '4 300', label: 'успешных рейсов в год', icon: 'Truck' },
     { number: '98%', label: 'довольных клиентов', icon: 'Star' },
-    { number: '12', label: 'лет безупречной работы', icon: 'Award' },
+    { number: '8', label: 'лет безупречной работы', icon: 'Award' },
     { number: '180', label: 'единиц собственной техники', icon: 'Package' }
   ]
 
@@ -124,7 +124,7 @@ const CasesSection = () => {
         <div className="bg-gray-50 rounded-2xl p-8">
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold text-primary mb-2">Цифры, которым доверяют</h3>
-            <p className="text-gray-600">Результаты 12 лет работы в сфере международных перевозок</p>
+            <p className="text-gray-600">Результаты 8 лет работы в сфере международных перевозок</p>
           </div>
 
           <div className="grid md:grid-cols-4 gap-6">
