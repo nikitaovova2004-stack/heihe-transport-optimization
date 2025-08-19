@@ -7,7 +7,7 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between py-4">
           <div className="flex items-center space-x-4">
-            <div className="text-3xl font-bold text-primary">METEOR</div>
+            <div className="text-3xl font-bold text-primary mx-0 rounded-none bg-slate-50">METEOR</div>
             <div className="h-8 w-px bg-gray-300 hidden md:block"></div>
             <div className="hidden md:block text-sm text-gray-600">
               Международные автоперевозки
