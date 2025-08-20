@@ -99,7 +99,7 @@ const CasesSection = () => {
                     {caseItem.features.map((feature, index) => (
                       <span 
                         key={index}
-                        className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full font-medium backdrop-blur-sm">
+                        className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full font-medium backdrop-blur-sm"
                       >
                         {feature}
                       </span>
