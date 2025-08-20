@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue, SelectLabel, SelectGroup, SelectSeparator } from '@/components/ui/select'
 import Icon from '@/components/ui/icon'
 import { Badge } from '@/components/ui/badge'
 
@@ -21,6 +22,43 @@ const RequestSection = () => {
     additionalServices: [] as string[],
     comment: ''
   })
+
+  const cargoTypes = [
+    { category: 'Автомобили', items: [
+      { value: 'cars_new', label: 'Новые автомобили', icon: 'Car' },
+      { value: 'cars_used', label: 'Подержанные автомобили', icon: 'Car' },
+      { value: 'motorcycles', label: 'Мотоциклы и квадроциклы', icon: 'Bike' },
+      { value: 'car_parts', label: 'Автозапчасти', icon: 'Settings' }
+    ]},
+    { category: 'Продукты питания', items: [
+      { value: 'food_frozen', label: 'Замороженные продукты', icon: 'Snowflake' },
+      { value: 'food_fresh', label: 'Свежие продукты', icon: 'Apple' },
+      { value: 'beverages', label: 'Напитки', icon: 'Coffee' },
+      { value: 'seafood', label: 'Морепродукты', icon: 'Fish' }
+    ]},
+    { category: 'Промышленные товары', items: [
+      { value: 'electronics', label: 'Электроника и техника', icon: 'Smartphone' },
+      { value: 'machinery', label: 'Оборудование и станки', icon: 'Cog' },
+      { value: 'textiles', label: 'Текстиль и одежда', icon: 'Shirt' },
+      { value: 'building_materials', label: 'Строительные материалы', icon: 'Hammer' }
+    ]},
+    { category: 'Сырьё и материалы', items: [
+      { value: 'metals', label: 'Металлы и сплавы', icon: 'Zap' },
+      { value: 'chemicals', label: 'Химические вещества', icon: 'Flask' },
+      { value: 'wood', label: 'Древесина и пиломатериалы', icon: 'Trees' },
+      { value: 'plastics', label: 'Пластмассы и полимеры', icon: 'Recycle' }
+    ]},
+    { category: 'Негабаритные грузы', items: [
+      { value: 'oversized_machinery', label: 'Негабаритное оборудование', icon: 'Truck' },
+      { value: 'construction_equipment', label: 'Строительная техника', icon: 'Construction' },
+      { value: 'containers', label: 'Контейнеры', icon: 'Package' }
+    ]},
+    { category: 'Другое', items: [
+      { value: 'furniture', label: 'Мебель', icon: 'Armchair' },
+      { value: 'medical', label: 'Медицинское оборудование', icon: 'Heart' },
+      { value: 'other', label: 'Другой груз', icon: 'Package' }
+    ]}
+  ]
   
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
@@ -163,13 +201,27 @@ const RequestSection = () => {
                 Информация о грузе
               </h3>
               <div className="grid md:grid-cols-3 gap-6">
-                <Input
-                  placeholder="Тип груза *"
-                  value={formData.cargoType}
-                  onChange={(e) => setFormData(prev => ({ ...prev, cargoType: e.target.value }))}
-                  required
-                  className="h-12 rounded-xl"
-                />
+                <Select value={formData.cargoType} onValueChange={(value) => setFormData(prev => ({ ...prev, cargoType: value }))}>
+                  <SelectTrigger className="h-12 rounded-xl">
+                    <SelectValue placeholder="Выберите тип груза *" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {cargoTypes.map((category) => (
+                      <SelectGroup key={category.category}>
+                        <SelectLabel className="text-primary font-semibold">{category.category}</SelectLabel>
+                        {category.items.map((item) => (
+                          <SelectItem key={item.value} value={item.value}>
+                            <div className="flex items-center">
+                              <Icon name={item.icon as any} size={16} className="mr-2 text-primary" />
+                              {item.label}
+                            </div>
+                          </SelectItem>
+                        ))}
+                        <SelectSeparator />
+                      </SelectGroup>
+                    ))}
+                  </SelectContent>
+                </Select>
                 <Input
                   placeholder="Вес (тонн) *"
                   value={formData.weight}
