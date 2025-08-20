@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import Icon from '@/components/ui/icon'
+import BackgroundSlideshow from './BackgroundSlideshow'
 
 const HeroSection = () => {
   const [weight, setWeight] = useState('')
@@ -27,17 +28,19 @@ const HeroSection = () => {
   ]
 
   return (
-    <section className="relative min-h-[80vh] bg-gradient-to-br from-muted via-background to-muted/50 flex items-center">
-      <div className="container mx-auto px-4">
+    <section className="relative min-h-[80vh] flex items-center overflow-hidden">
+      <BackgroundSlideshow />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-black/60 z-10" />
+      <div className="container mx-auto px-4 relative z-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             <div className="space-y-4">
-              <h1 className="text-5xl lg:text-6xl font-bold text-primary leading-tight">
-                FTL-перевозки из <span className="text-secondary">Хэйхэ</span> (КНР) в Россию
+              <h1 className="text-5xl lg:text-6xl font-bold text-white leading-tight drop-shadow-lg">
+                FTL-перевозки из <span className="text-secondary drop-shadow-md">Хэйхэ</span> (КНР) в Россию
               </h1>
-              <p className="text-xl text-gray-600 leading-relaxed">
+              <p className="text-xl text-white/90 leading-relaxed drop-shadow-md">
                 Фуры, рефы, автовозы, тралы — 7–12 дней.<br />
-                <strong className="text-primary">Фиксированная ставка FTL, собственный парк 180 машин, склад 5 000 м² в Хэйхэ</strong>
+                <strong className="text-white font-semibold drop-shadow-md">Фиксированная ставка FTL, собственный парк 180 машин, склад 5 000 м² в Хэйхэе</strong>
               </p>
             </div>
             
@@ -58,12 +61,12 @@ const HeroSection = () => {
                 <div className="text-sm text-gray-600">единиц техники</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary mb-1">8</div>
-                <div className="text-sm text-gray-600">лет опыта</div>
+                <div className="text-3xl font-bold text-white drop-shadow-lg mb-1">8</div>
+                <div className="text-sm text-white/80 drop-shadow-md">лет опыта</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary mb-1">4300</div>
-                <div className="text-sm text-gray-600">рейсов/год</div>
+                <div className="text-3xl font-bold text-white drop-shadow-lg mb-1">4300</div>
+                <div className="text-sm text-white/80 drop-shadow-md">рейсов/год</div>
               </div>
             </div>
           </div>
