@@ -39,7 +39,7 @@ const Footer = () => {
               <h4 className="text-white font-semibold mb-4">Контакты</h4>
               <ul className="space-y-2 text-sm">
                 <li>+86 (909) 123-45-67</li>
-                <li>info@tkmetеор.ru</li>
+                <li>info@tkmeteor.ru</li>
                 <li>WhatsApp 24/7</li>
                 <li>Хэйхэ, КНР</li>
               </ul>
