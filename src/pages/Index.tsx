@@ -1,6 +1,7 @@
 import Header from '@/components/Header'
 import HeroSection from '@/components/HeroSection'
 import TrackingSection from '@/components/TrackingSection'
+import RequestSection from '@/components/RequestSection'
 import FleetSection from '@/components/FleetSection'
 import RoutesSection from '@/components/RoutesSection'
 import ServicesSection from '@/components/ServicesSection'
@@ -15,6 +16,7 @@ const Index = () => {
       <Header />
       <HeroSection />
       <TrackingSection />
+      <RequestSection />
       <FleetSection />
       <RoutesSection />
       <ServicesSection />
