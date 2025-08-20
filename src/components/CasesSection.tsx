@@ -64,7 +64,7 @@ const CasesSection = () => {
         <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8 mb-16">
           {cases.map((caseItem) => (
             <div key={caseItem.id} className="group">
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-secondary/30">
+              <div className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 border border-gray-100/50">
                 {/* Image placeholder */}
                 <div className="h-48 bg-gradient-to-br from-secondary/20 to-primary/20 relative overflow-hidden">
                   <div className="absolute inset-0 flex items-center justify-center">
@@ -99,7 +99,7 @@ const CasesSection = () => {
                     {caseItem.features.map((feature, index) => (
                       <span 
                         key={index}
-                        className="px-2 py-1 bg-secondary/10 text-primary text-xs rounded-md font-medium"
+                        className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full font-medium backdrop-blur-sm">
                       >
                         {feature}
                       </span>
@@ -109,7 +109,7 @@ const CasesSection = () => {
                   <Button 
                     variant="outline" 
                     size="sm"
-                    className="w-full border-primary text-primary hover:bg-primary hover:text-white"
+                    className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground shadow-md hover:shadow-lg transition-all duration-200"
                   >
                     <Icon name="Eye" size={16} className="mr-2" />
                     Смотреть отчёт
@@ -121,7 +121,7 @@ const CasesSection = () => {
         </div>
 
         {/* Trust indicators */}
-        <div className="bg-gray-50 rounded-2xl p-8">
+        <div className="bg-gradient-to-br from-muted via-muted/80 to-muted/60 rounded-3xl p-8 border border-gray-100/50">
           <div className="text-center mb-8">
             <h3 className="text-2xl font-bold text-primary mb-2">Цифры, которым доверяют</h3>
             <p className="text-gray-600">Результаты 8 лет работы в сфере международных перевозок</p>
@@ -130,10 +130,10 @@ const CasesSection = () => {
           <div className="grid md:grid-cols-4 gap-6">
             {stats.map((stat, index) => (
               <div key={index} className="text-center group">
-                <div className="w-16 h-16 mx-auto mb-4 bg-secondary/10 rounded-full flex items-center justify-center group-hover:bg-secondary/20 transition-colors">
+                <div className="w-16 h-16 mx-auto mb-4 bg-primary/10 rounded-2xl flex items-center justify-center group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300 shadow-md">
                   <Icon name={stat.icon as any} size={24} className="text-primary" />
                 </div>
-                <div className="text-3xl font-bold text-primary mb-2">{stat.number}</div>
+                <div className="text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2">{stat.number}</div>
                 <div className="text-sm text-gray-600">{stat.label}</div>
               </div>
             ))}

@@ -27,7 +27,7 @@ const HeroSection = () => {
   ]
 
   return (
-    <section className="relative min-h-[80vh] bg-gray-50 flex items-center">
+    <section className="relative min-h-[80vh] bg-gradient-to-br from-muted via-background to-muted/50 flex items-center">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
@@ -42,11 +42,11 @@ const HeroSection = () => {
             </div>
             
             <div className="flex flex-wrap gap-4">
-              <Button size="lg" className="bg-secondary text-primary hover:bg-secondary/90 font-semibold">
+              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold shadow-lg transform hover:scale-105 transition-all duration-200">
                 <Icon name="Calculator" size={20} className="mr-2" />
                 Рассчитать и забронировать за 2 минуты
               </Button>
-              <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white">
+              <Button size="lg" variant="outline" className="border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground shadow-md transform hover:scale-105 transition-all duration-200">
                 <Icon name="MessageSquare" size={20} className="mr-2" />
                 Получить КП в WhatsApp
               </Button>
@@ -69,7 +69,7 @@ const HeroSection = () => {
           </div>
           
           <div className="relative">
-            <div className="bg-white rounded-2xl shadow-xl p-8">
+            <div className="bg-white/90 backdrop-blur-sm rounded-3xl shadow-2xl p-8 border border-gray-100/50">
               <div className="text-center mb-6">
                 <h3 className="text-2xl font-bold text-primary mb-2">Калькулятор FTL</h3>
                 <p className="text-gray-600">Рассчитайте стоимость за 2 минуты</p>
@@ -111,10 +111,10 @@ const HeroSection = () => {
                         key={type.value}
                         variant={truckType === type.value ? "default" : "outline"}
                         onClick={() => setTruckType(type.value)}
-                        className={`h-16 flex-col space-y-1 ${
+                        className={`h-16 flex-col space-y-1 rounded-xl transition-all duration-200 ${
                           truckType === type.value 
-                            ? 'bg-primary text-white' 
-                            : 'hover:bg-gray-50'
+                            ? 'bg-primary text-primary-foreground shadow-md scale-105' 
+                            : 'hover:bg-muted hover:shadow-md hover:scale-102'
                         }`}
                       >
                         <Icon name={type.icon as any} size={20} />
